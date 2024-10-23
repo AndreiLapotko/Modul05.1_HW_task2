@@ -7,7 +7,6 @@ const button = document.querySelector("button");
 const inputName = document.getElementById("nameInput");
 
 button.addEventListener("click", () => {
-  const inputName = document.getElementById("nameInput");
   let name = inputName.value.trim();
   saveName(name);
   displayName(name);
@@ -22,7 +21,6 @@ function displayName(name) {
       output.innerHTML = "<p>Укажите свое имя</p>";
     }
 }
-
 
 function saveName(name) {
   localStorage.setItem("name", JSON.stringify(name));
