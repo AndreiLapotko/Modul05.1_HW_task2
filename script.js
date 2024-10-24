@@ -4,13 +4,13 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const button = document.querySelector("button");
-const inputName = document.getElementById("nameInput");
+const nameInput = document.getElementById("nameInput");
 
 button.addEventListener("click", () => {
-  let name = inputName.value.trim();
-  saveName(name);
+  let name = nameInput.value.trim();
+  localStorage.setItem("name", JSON.stringify(name));
   displayName(name);
-  inputName.value = "";
+  nameInput.value = "";
 });
 
 function displayName(name) {
@@ -20,8 +20,4 @@ function displayName(name) {
     } else {
       output.innerHTML = "<p>Укажите свое имя</p>";
     }
-}
-
-function saveName(name) {
-  localStorage.setItem("name", JSON.stringify(name));
 }
